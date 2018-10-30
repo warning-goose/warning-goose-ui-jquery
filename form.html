@@ -1,18 +1,96 @@
 <!DOCTYPE html>
-<html>
-    <head> 
-        <meta charset="utf-8"/> 
-        <script type="text/javascript" src="js/popup.js"></script>     
-        <link rel="stylesheet" type="text/css" href="css/popup.css"> 
-    </head>  
+<html lang="en" />
+  <head>
+    <!-- Set character encoding for the document -->
+    <meta charset="UTF-8" />
+    <!-- Instruct Internet Explorer to use its latest rendering engine -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- Viewport for responsive web design -->
+    <!-- Document Title: At most 55 characters for Google Search Result Pages -->
+    <title>{{ .Site.Title }}</title>
+    <!-- Meta Description: At most 150 characters for Google Search Result Pages -->
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    <!-- Helps prevent duplicate content issues with www. and non-www, for example -->
+    <link rel="canonical" href="{{ .Site.BaseURL }}" />
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <form action="#" method="post">
+      <header>
+        <p class="flash">Hey warning goose</p>
+      </header>
+      <section>
+        <h3>
+          <span class="big">Hey warning goose</span>
+          <span class="small">Qu'est-ce qui se passe</span>
+        </h3>
 
-    <body> 
+        <div class="form-group">
+          <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
+          <label for="i_am_wondering" />
+        </div>
+        <div class="form-group">
+          <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
+          <label for="i_am_wondering" />
+        </div>
+        <div class="form-group">
+          <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
+          <label for="i_am_wondering" />
+        </div>
+      </section>
+      <section>
+        <h3>
+          <span class="big">Alors, on t'oblige ?</span>
+          <span class="small">Sélectionne les sujets qui t'alertent sur ce site</span>
+        </h3>
+      </section>
 
-<div class="logo"> <img  src="img/logo.png" alt="Data transition logo" >  </div>
+      <section>
+        <h3>
+          <span class="big">Aïe...</span>
+          <span class="small">Et tu souhaites passer en mode offensif ?</span>
+        </h3>
+        <p class="explanation">
+          Dans le cas d'une action collective, je souhaite être contacter par la
+          première association qui portera le dossier en rapport avec le site
+          SITE pour un meilleur respect de mes droits.
+        </p>
+      </section>
 
+      <section>
+        <h3>
+          <span class="big">C'est bien noté !</span>
+          <span class="small">
+            Nous allons t'envoyer un email. 
+            Tu devras cliquer sur le lien qu'il contient pour valider 
+            tout ce que tu viens de nous dire.
+          </span>
+        </h3>
+          
+        <div class="form-group">
+          <label for="your-email" />
+          <input type="text" 
+                 id="your-email" 
+                 name="your-email" 
+                 placeholder="ex: jon.snow@winterfell.org" 
+          />
+        </div>
 
-<h1> votre message à été transmis </h1>
-
-</script>
-</body>
-
+        <p class="explanation">
+        FIXME: Les données personnelles ...  politique de confidentialité
+        </p>
+      </section>
+      <section>
+        <h3>
+          <span class="big">Merci warning goose</span>
+          <span class="small">A bientôt pour une action citoyenne</span>
+        </h3>
+        <div class="form-group">
+        </div>
+        <p class="explanation">
+          Tu peux maintenant fermer cette fenetre :)
+        </p>
+    </form>
+  </body>
+</html>

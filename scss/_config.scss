@@ -1,0 +1,26 @@
+/* Constants declaration only */
+
+$feature_overlay: false;
+
+$debug_home: false;
+$debug_nos_offres_folded: false;
+$debug_nos_offres_unfolded: false;
+$debug_notre_reseau_folded: false;
+$debug_notre_reseau_unfolded: false;
+$debug_contact: false;
+
+// Official DT colors
+$color_yellow: #fdbd10; 
+$color_darkgrey: #404042;
+$color_mediumgrey: #716e6e;
+$color_lightgrey: #efeeee;
+$color_green: #608f74;
+$color_blue: #243881;
+$color_white: #ffffff;
+
+$color_text_base: $color_darkgrey;
+$color_text_reversed: $color_white;
+$color_text_highlight: $color_green;
+
+$font_serif: "IBM Plex Serif", serif;
+$font_sans_serif: "Avenir", sans-serif;

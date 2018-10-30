@@ -1,0 +1,15 @@
+{
+  "name": "dt-warning-goose",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "",
+  "scripts": {
+  },
+  "author": "Glenn Y. Rolland",
+  "license": "ISC",
+  "dependencies": {
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.9.4",
+    "nodemon": "^1.18.4"
+  }
+}
