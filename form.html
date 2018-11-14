@@ -1,96 +1,177 @@
-<!DOCTYPE html>
-<html lang="en" />
+<!doctype html>
+<html lang="en">
   <head>
-    <!-- Set character encoding for the document -->
     <meta charset="UTF-8" />
-    <!-- Instruct Internet Explorer to use its latest rendering engine -->
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <!-- Viewport for responsive web design -->
-    <!-- Document Title: At most 55 characters for Google Search Result Pages -->
-    <title>{{ .Site.Title }}</title>
-    <!-- Meta Description: At most 150 characters for Google Search Result Pages -->
-    <meta name="description" content="{{ .Site.Params.description }}" />
-    <!-- Helps prevent duplicate content issues with www. and non-www, for example -->
-    <link rel="canonical" href="{{ .Site.BaseURL }}" />
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DT Warning Goose</title>
+    <meta name="description" content="Protect citizens privact" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js" ></script>
   </head>
   <body>
     <form action="#" method="post">
-      <header>
-        <p class="flash">Hey warning goose</p>
-      </header>
-      <section>
-        <h3>
-          <span class="big">Hey warning goose</span>
-          <span class="small">Qu'est-ce qui se passe</span>
-        </h3>
-
-        <div class="form-group">
-          <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
-          <label for="i_am_wondering" />
-        </div>
-        <div class="form-group">
-          <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
-          <label for="i_am_wondering" />
-        </div>
-        <div class="form-group">
-          <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
-          <label for="i_am_wondering" />
-        </div>
-      </section>
-      <section>
-        <h3>
-          <span class="big">Alors, on t'oblige ?</span>
-          <span class="small">Sélectionne les sujets qui t'alertent sur ce site</span>
-        </h3>
-      </section>
 
       <section>
-        <h3>
-          <span class="big">Aïe...</span>
-          <span class="small">Et tu souhaites passer en mode offensif ?</span>
-        </h3>
-        <p class="explanation">
-          Dans le cas d'une action collective, je souhaite être contacter par la
+        <header>
+          <h2>Hey, Warning Goose !</h2>
+          <h3>Qu'est-ce qui se passe avec le site <span class="site-url">SITE</span> ?</h3>
+        </header>
+
+        <main>
+          <div class="form-group">
+            <input type="radio" name="wassup" id="i_am_wondering" value="i_am_wondering" />
+            <label for="i_am_wondering">Hmm.. je m'interroge</label>
+          </div>
+
+          <div class="form-group">
+            <input type="radio" name="wassup" id="i_am_forced_to" value="i_am_forced_to" />
+            <label for="i_am_forced_to">On m'oblige</label>
+          </div>
+
+          <div class="form-group">
+            <input type="radio" name="wassup" id="i_am_angry" value="i_am_angry" />
+            <label for="i_am_angry">Je suis en colère</label>
+          </div>
+
+          <div class="form-group">
+            <input type="button" value="Continuer" disabled />
+          </div>
+        </main>
+      </section>
+
+      <section>
+        <header>
+          <h2>Alors, on t'oblige ?</h2>
+          <h3>Sélectionne les sujets qui t'alertent sur ce site</h3>
+        </header>
+
+        <main>
+          <div class="form-group">
+            <input type="checkbox" name="topic1" id="topic1" value="topic1" />
+            <label for="topic1">Mes données, qui va les voir&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic2" id="topic2" value="topic2" />
+            <label for="topic2">Mes données, elles servent à quoi&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic3" id="topic3" value="topic3" />
+            <label for="topic3">Mes données, elles circulent où&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic4" id="topic4" value="topic4" />
+            <label for="topic4">Qui est responsable de mes données&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic5" id="topic5" value="topic5" />
+            <label for="topic5"> Je ne peux pas exercer mes droits facilement&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic6" id="topic6" value="topic6" />
+            <label for="topic6">On me demande trop de données&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic7" id="topic7" value="topic7" />
+            <label for="topic7">Comment sont protégées mes données&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic8" id="topic8" value="topic8" />
+            <label for="topic8"> Je ne peux pas accéder aux informations avant de valider&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topic9" id="topic9" value="topic9" />
+            <label for="topic9">Je ne veux pas que ces informations deviennent publiques&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="button" value="Continuer" disabled />
+          </div>
+        </main>
+
+      </section>
+
+      <section>
+        <header>
+          <h2>Aïe...</h2>
+          <h3>Et tu souhaites passer en mode offensif ?</h3>
+        </header>
+
+        <main>
+          <div class="form-group">
+            <input type="radio" name="offensive" id="offensive-no" value="no" />
+            <label for="offensive-no">Non</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="offensive" id="offensive-yes" value="yes" />
+            <label for="offensive-yes">Oui</label>
+          </div>
+          <p class="explanation">
+                    Dans le cas d'une action collective, je souhaite être contacté par la
           première association qui portera le dossier en rapport avec le site
-          SITE pour un meilleur respect de mes droits.
-        </p>
+          <span class="site-url">SITE</span> pour un meilleur respect de mes droits.
+          </p>
+
+          <div class="form-group">
+            <input type="button" value="Continuer" disabled />
+          </div>
+        </main>
       </section>
 
       <section>
-        <h3>
-          <span class="big">C'est bien noté !</span>
-          <span class="small">
-            Nous allons t'envoyer un email. 
+        <header>
+          <h2>C'est bien noté !</h2>
+          <h3>
+            Quel est ton email ?
+          </h3>
+        </header>
+
+        <main>
+
+        <div class="form-group">
+            <input type="email" 
+                   id="your-email" 
+                   name="your-email" 
+                   placeholder="ex: jon.snow@winterfell.org" 
+             />
+          </div>
+
+          <div class="explanation">
+            <b>Nous allons t'envoyer un email. 
             Tu devras cliquer sur le lien qu'il contient pour valider 
-            tout ce que tu viens de nous dire.
-          </span>
-        </h3>
-          
-        <div class="form-group">
-          <label for="your-email" />
-          <input type="text" 
-                 id="your-email" 
-                 name="your-email" 
-                 placeholder="ex: jon.snow@winterfell.org" 
-          />
-        </div>
+              tout ce que tu viens de nous dire.</b>
+          </div>
 
+          <p class="explanation">
+            FIXME: Les données personnelles ...  politique de confidentialité
+          </p>
+          <div class="form-group">
+            <input type="submit" value="Envoyer" disabled />
+          </div>
+        </main>
+      </section>
+
+      <section>
+        <header>
+          <h2>Merci warning goose</h2>
+          <h3>À bientôt pour une action citoyenne</h3>
+        </header>
+        <div class="form-group">
+        </div>
         <p class="explanation">
-        FIXME: Les données personnelles ...  politique de confidentialité
+        Tu peux maintenant fermer cette fenêtre :-)
         </p>
       </section>
-      <section>
-        <h3>
-          <span class="big">Merci warning goose</span>
-          <span class="small">A bientôt pour une action citoyenne</span>
-        </h3>
-        <div class="form-group">
-        </div>
-        <p class="explanation">
-          Tu peux maintenant fermer cette fenetre :)
-        </p>
     </form>
+    <script src="js/app.js" ></script>
   </body>
 </html>

@@ -1,10 +1,18 @@
 console.log("I'm defined in background.js");
 
-function browserAction(data){
-    browser.tabs.update({
-        url:"https://datatransition.net/"})
-     
-console.log("browserAction clicked");
+var agent;
+try { if (!agent) { agent = browser; } } 
+catch (e) { /* do nothing  */ }
+try { if (!agent) { agent = chrome; } } 
+catch (e) { /* do nothing  */ }
 
-    };
-browser.runtime.onMessage.addListener(browserAction);
+/*
+function browserAction(data){
+    agent.tabs.update({
+        url:"https://datatransition.net/"})
+
+    console.log("browserAction clicked");
+}
+
+agent.runtime.onMessage.addListener(browserAction);
+*/

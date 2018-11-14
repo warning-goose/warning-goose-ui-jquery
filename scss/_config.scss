@@ -9,18 +9,21 @@ $debug_notre_reseau_folded: false;
 $debug_notre_reseau_unfolded: false;
 $debug_contact: false;
 
-// Official DT colors
-$color_yellow: #fdbd10; 
-$color_darkgrey: #404042;
-$color_mediumgrey: #716e6e;
-$color_lightgrey: #efeeee;
-$color_green: #608f74;
-$color_blue: #243881;
+// Official colors
+$color_darkgrey: #404040;
+$color_mediumgrey: #888888;
+$color_lightgrey: #eeeeee;
+
+$color_red: #c00050;
+$color_red_disabled: mix($color_red, $color_lightgrey);
+$color_blue: #336699;
+
+$color_black: #000000;
 $color_white: #ffffff;
 
 $color_text_base: $color_darkgrey;
 $color_text_reversed: $color_white;
-$color_text_highlight: $color_green;
+$color_text_highlight: $color_blue;
 
-$font_serif: "IBM Plex Serif", serif;
-$font_sans_serif: "Avenir", sans-serif;
+$font_serif: "Merriweather", serif;
+$font_sans_serif: "Roboto", sans-serif;

@@ -1,22 +1,26 @@
-// Before anything else 
+// Configuration (before anything else)
 @import "./config";
 @import "./fonts";
 
-// Include functions
+// Functions
 // @import "../mixins/action_button";
 
-// Include external ressources
+// External ressources
 @import "./ext/bootstrap-reboot";
 
-// Include desktop version (default)
+// Fix for smaller screens
+@media screen and (max-width: 320px) {
+	body { width: min-content; }
+}
+
+// Mobile version (default)
 @import "./layout/common";
 @import "./components/header";
 @import "./components/footer";
 
-// Include mobile version (overrides)
 @import "./pages/form";
 
-// Include desktop version (overrides)
+// Desktop version (override)
 @media only screen and (min-width: 768px) {
 	@import "./layout/common_desktop";
   @import "./components/header_desktop";
@@ -25,10 +29,4 @@
 	@import "./pages/form_desktop";
 }
 
-// Fix with on smaller screens
-@media screen and (max-width: 320px) {
-	body {
-		width: min-content;
-	}
-}
 
