@@ -11,7 +11,7 @@
     <script src="js/jquery-3.3.1.min.js" ></script>
   </head>
   <body>
-    <form action="#" method="post">
+    <form id="form" action="#" method="post">
 
       <section>
         <header>
@@ -49,47 +49,47 @@
 
         <main>
           <div class="form-group">
-            <input type="checkbox" name="topic1" id="topic1" value="topic1" />
+            <input type="checkbox" name="topics[]" id="topic1" value="topic1" />
             <label for="topic1">Mes données, qui va les voir&nbsp;?</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic2" id="topic2" value="topic2" />
+            <input type="checkbox" name="topics[]" id="topic2" value="topic2" />
             <label for="topic2">Mes données, elles servent à quoi&nbsp;?</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic3" id="topic3" value="topic3" />
+            <input type="checkbox" name="topics[]" id="topic3" value="topic3" />
             <label for="topic3">Mes données, elles circulent où&nbsp;?</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic4" id="topic4" value="topic4" />
+            <input type="checkbox" name="topics[]" id="topic4" value="topic4" />
             <label for="topic4">Qui est responsable de mes données&nbsp;?</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic5" id="topic5" value="topic5" />
+            <input type="checkbox" name="topics[]" id="topic5" value="topic5" />
             <label for="topic5"> Je ne peux pas exercer mes droits facilement&nbsp;!</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic6" id="topic6" value="topic6" />
+            <input type="checkbox" name="topics[]" id="topic6" value="topic6" />
             <label for="topic6">On me demande trop de données&nbsp;!</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic7" id="topic7" value="topic7" />
+            <input type="checkbox" name="topics[]" id="topic7" value="topic7" />
             <label for="topic7">Comment sont protégées mes données&nbsp;?</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic8" id="topic8" value="topic8" />
+            <input type="checkbox" name="topics[]" id="topic8" value="topic8" />
             <label for="topic8"> Je ne peux pas accéder aux informations avant de valider&nbsp;!</label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" name="topic9" id="topic9" value="topic9" />
+            <input type="checkbox" name="topics[]" id="topic9" value="topic9" />
             <label for="topic9">Je ne veux pas que ces informations deviennent publiques&nbsp;!</label>
           </div>
 
@@ -165,8 +165,6 @@
           <h2>Merci warning goose</h2>
           <h3>À bientôt pour une action citoyenne</h3>
         </header>
-        <div class="form-group">
-        </div>
         <p class="explanation">
         Tu peux maintenant fermer cette fenêtre :-)
         </p>
