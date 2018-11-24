@@ -1,5 +1,9 @@
 
+NAME=warning-goose
+
 all:
+
+extension: $(NAME).xpi
 
 node_modules:
 	npm install
@@ -20,9 +24,12 @@ build-prod: node_modules
 		scss/main.scss \
 		css/style.css
 
-zip: node_modules css/style.css
-	git archive --format zip --output dt-warning-goose.zip HEAD
-	mv dt-warning-goose.zip dt-warning-goose.xpi
+$(NAME).xpi: node_modules css/style.css
+	git archive --format zip --output $(NAME).zip HEAD
+	mv $(NAME).zip $(NAME).xpi
 
-.PHONY: zip build-dev build-prod watch
+clean: 
+	rm -f $(NAME).xpi
+
+.PHONY: extension build-dev build-prod watch
 
