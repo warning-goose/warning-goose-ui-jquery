@@ -1,4 +1,11 @@
 $(function() {
+    /* define base url*/
+    var DEBUG = true;
+
+    var API_URL = DEBUG ? 
+        'http://localhost:9200' : 
+        'https://warning-goose.maprivacy.org';
+
     /*
      * detect browser type and set agent
      */
@@ -73,7 +80,7 @@ $(function() {
 
         $.ajax({
 		    type:'POST',
-            url: "http://localhost:9200/api/v1/statements",
+            url: API_URL + '/api/v1/statements',
 
             data: JSON.stringify(data),
             dataType: 'json',
