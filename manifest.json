@@ -15,7 +15,7 @@
       "16":"img/icon16.png"
     },
 
-    "default_popup": "form.html",
+    "default_popup": "index.html",
     "default_title":"Data Transition"
   },
 
