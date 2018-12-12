@@ -16,8 +16,12 @@ $(function() {
     var LANG = 'fr';
     var I18N = {
         "fr": {
-            "error-when-sending-data": "Un probleme est survenu à l'envoi des données",
+            "error-when-sending-data": "Un probleme est survenu à l'envoi des données. Veuillez-réessayer plus tard.",
             "success-when-sending-data": "Votre alerte à été envoyée avec succès",
+            "why-i_am_forced_to": "Pourquoi %s t'oblige ?",
+            "why-i_am_angry": "Pourquoi %s te mets en colère ?",
+            "why-i_am_wondering": "Pourquoi %s te fait te poser des questions ?",
+
         }
     }
 
@@ -60,24 +64,29 @@ $(function() {
         }
 
         this.toJson = function() {
-              return JSON.parse(JSON.stringify(data));
+              return JSON.stringify(data);
         };
 
         for (let prop in data) {
             // capitalize
             let capProp = 
-                'set' +
                 prop.charAt(0).toUpperCase() + prop.slice(1);
             let kebabProp = 
-                'set-' +
                 prop.replace(/([a-z])([A-Z])/g, "$1-$2")
                 .replace(/\s+/g, '-')
                 .toLowerCase();
-            this[capProp] = function(value) {
+
+            // create setter
+            this['set' +capProp] = function(value) {
                 data[prop] = value;
                 console.log(data);
                 // console.log("trigger wg:" + kebabProp + ' => ' + value);
-                $BODY.trigger('wg:' + kebabProp, value);
+                $BODY.trigger('wg:set-' +kebabProp, value);
+            }
+
+            // create getter
+            this[prop] = function() {
+                return data[prop];
             }
         }
     };
@@ -94,6 +103,12 @@ $(function() {
             .replace(/^www\./, ''); // remove leading www
 
         MODEL.setTargetDomain(urlClean);
+    });
+
+    $BODY.on('wg:set-wassup', function(ev, wassup) {
+        var text = _("why-" + wassup);
+        text = text.replace('%s', "<span class='site-url'>" + MODEL.targetDomain() + "</span>");
+        $('#title-wassup').text(text);
     });
 
     /* Update text zones with url */
@@ -154,6 +169,7 @@ $(function() {
     });
 
     $('#form').on('submit', function(ev) {
+        let $section = $(this).find('section').last();
         ev.preventDefault();
 
         $.ajax({
@@ -166,7 +182,14 @@ $(function() {
             contentType: 'application/json; charset=utf-8',
             processData: false,
         }).done(function() {
-            alert(_("success-when-sending-data"));
+            $BODY.animate({ opacity: 0 }, 250, function() {
+                $BODY.css('opacity', '0');
+                $BODY.css('display', 'block');
+                $section.css('display', 'block');
+                var top = $section.offset().top;
+                $('html, body').scrollTop(top)  
+                $BODY.animate({opacity: 1}, 250);
+            });
         }).fail(function() {
             alert(_("error-when-sending-data"));
         });
