@@ -1,39 +1,42 @@
 {
-  "name" : "DT Warning Goose",
-  "description" : "Warning Goose - Crowdsourced Privacy Alert",
+  "name": "Warning Goose",
+  "description": "Warning Goose - Crowdsourced Privacy Alert",
   "version": "1.0",
   "manifest_version": 2,
   "author": "DATA TRANSITION",
-
-  "icons":{
+  "icons": {
     "16": "img/icon16.png",
-    "128":"img/icon.png"
+    "128": "img/icon.png"
   },
-
-  "browser_action":{
-    "default_icon":{
-      "16":"img/icon16.png"
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon16.png"
     },
-
     "default_popup": "index.html",
-    "default_title":"Data Transition"
+    "default_title": "Data Transition"
   },
-
   "content_scripts": [
     {
       "matches": [
+        "*://*.mozilla.org/*",
         "<all_urls>"
       ],
-
-      "js": ["js/content.js"]
+      "js": [
+        "js/app.js",
+        "js/content.js",
+        "js/jquery-3.3.1.min.js"
+      ],
+      "css": [
+        "css/popup.css",
+        "css/style.css"
+      ]
     }
-
   ],
-
-  "background":{
-    "scripts":["js/background.js"]
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
   },
-
   "permissions": [
     "privacy",
     "storage",
@@ -47,5 +50,4 @@
   "web_accessible_resources": [
     "/web_accessible_resources/*"
   ]
-
 }
