@@ -32,7 +32,6 @@
         "js/app.js"
       ],
       "css": [
-        "css/popup.css",
         "css/style.css"
       ]
     }
