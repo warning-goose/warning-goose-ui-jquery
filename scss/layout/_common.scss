@@ -2,71 +2,75 @@
 // Fill rules in the same order as page elements (from top to bottom)
 
 // Set template style here
-html {
+html#dtwg {
   overflow-x: hidden;
   overflow-y: visible;
-}
 
-body {
-  color: #716e6e;
-  font-size: 16px;
-  font-family: $font_sans_serif;
-	min-width: 320px;
-  max-width: 768px;
-  margin: 0 auto;
-}
+  body {
+    color: #716e6e;
+    font-size: 16px;
+    font-family: $font_sans_serif;
+	  width: 450px;
+    width: 600px;
+	  min-width: 450px;
+    max-width: 600px;
+    margin: 0 auto;
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $font_serif;
-    color: $color_red;
-}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font_serif;
+      color: $color_red;
+    }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 35px;
-    line-height: 1.3;
-}
+    h2 {
+      font-size: 24px;
+      margin-bottom: 35px;
+      line-height: 1.3;
+    }
 
-a {
-	text-decoration: none;
-	transition: all 0.3s;
+    a {
+	    text-decoration: none;
+	    transition: all 0.3s;
 
-	&:hover,
-	&:focus {
-	  outline: none;
-		text-decoration: none;
-	}
-}
+	    &:hover,
+	    &:focus {
+	      outline: none;
+		    text-decoration: none;
+	    }
+    }
 
-ul, li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
+    ul, li {
+	    margin: 0;
+	    padding: 0;
+	    list-style-type: none;
+    }
 
-img {
-	max-width:100%;
-	height: auto;
-}
+    img {
+	    max-width:100%;
+	    height: auto;
+    }
 
-/*
- * Feature: overlay design mockup for debug
- */
+
+  } // body
+
+  /*
+   * Feature: overlay design mockup for debug
+   */
 @if ($feature_overlay) {
 	body::after {
-    	content: "";
-    	display: block;
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	background-position: top center;
-    	background-color: transparent;
-    	background-repeat: no-repeat;
-    	width: 100%;
-    	height: 20000px;
-    	opacity: 0.25;
-    	pointer-events: none; 
-    	z-index: 999;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: top center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 20000px;
+    opacity: 0.25;
+    pointer-events: none; 
+    z-index: 999;
 	}
+}
 }
 

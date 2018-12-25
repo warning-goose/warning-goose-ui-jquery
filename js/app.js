@@ -1,11 +1,14 @@
-$(function() {
+dtwg_$(function() {
+    // local jQuery
+    var $ = dtwg_$;
 
     /*
      * CONSTANTS & GLOBALS 
      */
+    var SCOPE = '#dtwg ';
     var DEBUG = true;
     var MODEL; // will contain the data model
-    var $BODY = $('body');
+    var $BODY = $(SCOPE + 'body');
 
     // Network settings
     var API_URL = DEBUG ? 
@@ -108,32 +111,32 @@ $(function() {
     $BODY.on('wg:set-wassup', function(ev, wassup) {
         var text = _("why-" + wassup);
         text = text.replace('%s', "<span class='site-url'>" + MODEL.targetDomain() + "</span>");
-        $('#title-wassup').text(text);
+        $(SCOPE + '#title-wassup').html(text);
     });
 
     /* Update text zones with url */
     $BODY.on('wg:set-target-domain', function (ev, data) {
-        var $siteText = $('.site-url');
+        var $siteText = $(SCOPE + '.site-url');
         $siteText.text(data);
     });
 
-    $('input[name="your-email"]').on('input', function() {
+    $(SCOPE + 'input[name="your-email"]').on('input', function() {
         var email = $(this).val();
         MODEL.setEmail(email);
     });
 
-    $('input[name="wassup"]').on('change', function() {
+    $(SCOPE + 'input[name="wassup"]').on('change', function() {
         var wassup = $(this).val();
         MODEL.setWassup(wassup);
     });
 
-    $('input[name="offensive"]').on('change', function() {
+    $(SCOPE + 'input[name="offensive"]').on('change', function() {
         var offensive = $(this).val();
         MODEL.setOffensive(offensive);
     });
 
-    $('input[name="topics[]"]').on('change', function() {
-        var topics = $('input[name="topics[]"]:checked').map(function() { 
+    $(SCOPE + 'input[name="topics[]"]').on('change', function() {
+        var topics = $(SCOPE + 'input[name="topics[]"]:checked').map(function() { 
             return $(this).val(); 
         }).toArray().join(',');
         MODEL.setTopics(topics);
@@ -146,29 +149,31 @@ $(function() {
     MODEL = new Model();
 
     // startup
-    $('section:first').fadeIn();
+    $(SCOPE + 'section:first').fadeIn();
 
     // enable action button after click
-    $('section .form-group')
+    $(SCOPE + 'section .form-group')
     .children('[type=radio], [type=checkbox], [type=text], [type=email]')
     .on('change', function() {
         var $submit = $(this).closest('section').find('[type=submit], [type=button]');
         $submit.removeAttr('disabled');
     });
 
-    $('section .form-group > [type=button]').on('click', function() {
-        var $section = $(this).closest('section').next();
+    $(SCOPE + 'section .form-group > [type=button]').on('click', function() {
+        var $curSection = $(this).closest('section');
+        var $nextSection = $(this).closest('section').next();
         $BODY.animate({ opacity: 0 }, 250, function() {
             $BODY.css('opacity', '0');
             $BODY.css('display', 'block');
-            $section.css('display', 'block');
-            var top = $section.offset().top;
-            $('html, body').scrollTop(top)  
+            $curSection.css('display', 'none');
+            $nextSection.css('display', 'block');
+            // var top = $section.offset().top;
+            // $('html, body').scrollTop(top)  
             $BODY.animate({opacity: 1}, 250);
         });
     });
 
-    $('#form').on('submit', function(ev) {
+    $(SCOPE + '#form').on('submit', function(ev) {
         let $section = $(this).find('section').last();
         ev.preventDefault();
 
@@ -187,7 +192,7 @@ $(function() {
                 $BODY.css('display', 'block');
                 $section.css('display', 'block');
                 var top = $section.offset().top;
-                $('html, body').scrollTop(top)  
+                $(SCOPE + 'html,' + SCOPE + ' body').scrollTop(top)  
                 $BODY.animate({opacity: 1}, 250);
             });
         }).fail(function() {

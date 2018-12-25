@@ -10,7 +10,9 @@
 
 // Fix for smaller screens
 @media screen and (max-width: 320px) {
-	body { width: min-content; }
+  html#dtwg {
+	  body { width: min-content; }
+  }
 }
 
 // Mobile version (default)

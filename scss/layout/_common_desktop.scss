@@ -1,12 +1,17 @@
 /* Common layout for mobile pages */
 // Fill rules in the same order as page elements (from top to bottom)
 
-h2 {
-  font-size: 36px;
-}
+html#dtwg {
+  body {
 
-p {
-  line-height: 35px;
-  font-size: 22px;
-}
+    h2 {
+      font-size: 36px;
+    }
 
+    p {
+      line-height: 35px;
+      font-size: 22px;
+    }
+
+  }
+}

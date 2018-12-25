@@ -1,101 +1,111 @@
 
-section {
-  display: none;
-  opacity: hidden;
-  min-height: 100vh;
-  padding: 20px 20px;
-  padding-bottom: 45px;
-  border-bottom: 5px solid $color_blue;
+html#dtwg {
+  body {
 
-  header {
-    h2 {
-      background-color: $color_blue;
-      // background: linear-gradient(135deg, $color_black 0%, $color_blue 15%, $color_blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-      color: $color_white;
-      display: block;
-      font-style: italic;
-      margin: -20px -20px 0px -20px;
+    section {
+      display: none;
+      opacity: hidden;
+      min-height: 100vh;
       padding: 20px 20px;
-    }
+      padding-bottom: 45px;
+      border-bottom: 5px solid $color_blue;
 
-    h3 {
-      display: block;
-      font-size: 18px;
-      margin: 0px -20px 0px -20px;
-      padding: 20px 20px;
-    }
+      header {
+        h2 {
+          background-color: $color_blue;
+          // background: linear-gradient(135deg, $color_black 0%, $color_blue 15%, $color_blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-    .site-url {
-      font-style: italic;
-      color: $color_blue;
-    }
-  }
+          color: $color_white;
+          display: block;
+          font-style: italic;
+          margin: -20px -20px 0px -20px;
+          padding: 20px 20px;
 
-  main {
-    .explanation {
-      margin-top: 40px;
-      font-style: italic;
-      font-size: 14px;
+          .site-url {
+            color: $color_red;
+          }
+        }
 
-      & + .explanation {
-        margin-top: 20px;
-      }
-    }
+        h3 {
+          display: block;
+          font-size: 18px;
+          margin: 0px -20px 0px -20px;
+          padding: 20px 20px;
+        }
 
-    .form-group {
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      justify-content: stretch;
-      align-items: center;
-
-      input[type=radio],
-      input[type=checkbox] {
-        display: none;
-      }
-
-      input[type=radio] + label,
-      input[type=checkbox] + label {
-        transition: all 0.25s ease-in-out;
-        background-color: lighten($color_blue, 55%);
-        padding: 10px 20px;
-        border-radius: 5px;
-        flex-grow: 1;
-      }
-
-      input[type=radio]:checked + label,
-      input[type=checkbox]:checked + label {
-        background-color: lighten($color_red, 55%);
-        padding-left: 25px;
-        font-style: italic;
-      }
-
-      input[type=text],
-      input[type=email] {
-        width: 100%;
-        padding: 10px 20px;
-        box-shadow: inset 0px 2px 2px rgba($color_blue, 0.25);
-        border: 1px solid $color_blue;
-        border-radius: 5px;
-      }
-
-      input[type=submit],
-      input[type=button] {
-        background-color: $color_red;
-        padding: 10px 20px;
-        border: none;
-        color: white;
-        flex-grow: 1;
-        margin-top: 40px;
-
-        &[disabled] {
-          background-color: $color_red_disabled;
-          color: $color_lightgrey;
+        .site-url {
+          font-style: italic;
+          color: $color_blue;
         }
       }
 
-    }
-  }
-}
+      main {
+        .explanation {
+          margin-top: 40px;
+          font-style: italic;
+          font-size: 14px;
 
+          & + .explanation {
+            margin-top: 20px;
+          }
+        }
+
+        .form-group {
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: row;
+          justify-content: stretch;
+          align-items: center;
+
+          input[type=radio],
+          input[type=checkbox] {
+            display: none;
+          }
+
+          input[type=radio] + label,
+          input[type=checkbox] + label {
+            transition: all 0.25s ease-in-out;
+            background-color: lighten($color_blue, 55%);
+            padding: 10px 20px;
+            border-radius: 5px;
+            flex-grow: 1;
+          }
+
+          input[type=radio]:checked + label,
+          input[type=checkbox]:checked + label {
+            background-color: lighten($color_red, 55%);
+            padding-left: 25px;
+            font-style: italic;
+          }
+
+          input[type=text],
+          input[type=email] {
+            width: 100%;
+            padding: 10px 20px;
+            box-shadow: inset 0px 2px 2px rgba($color_blue, 0.25);
+            border: 1px solid $color_blue;
+            border-radius: 5px;
+          }
+
+          input[type=submit],
+          input[type=button] {
+            background-color: $color_red;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            flex-grow: 1;
+            margin-top: 40px;
+
+            &[disabled] {
+              background-color: $color_red_disabled;
+              color: $color_lightgrey;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+}

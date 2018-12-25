@@ -1,30 +1,35 @@
 {
   "name": "Warning Goose",
   "description": "Warning Goose - Crowdsourced Privacy Alert",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 2,
-  "author": "DATA TRANSITION",
+  "author": "Data Transition",
   "icons": {
-    "16": "img/icon16.png",
-    "128": "img/icon.png"
+      "16": "img/icon-16.png",
+      "32": "img/icon-32.png",
+      "48": "img/icon-48.png",
+      "96": "img/icon-96.png",
+      "128": "img/icon-128.png"
   },
   "browser_action": {
     "default_icon": {
-      "16": "img/icon16.png"
+      "16": "img/icon-16.png",
+      "32": "img/icon-32.png",
+      "48": "img/icon-48.png",
+      "96": "img/icon-96.png",
+      "128": "img/icon-128.png"
     },
-    "default_popup": "index.html",
-    "default_title": "Data Transition"
+    "default_popup": "popup/index.html",
+    "default_title": "Warning Goose"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://*.mozilla.org/*",
         "<all_urls>"
       ],
       "js": [
-        "js/app.js",
-        "js/content.js",
-        "js/jquery-3.3.1.min.js"
+        "js/jquery-3.3.1.min.js",
+        "js/app.js"
       ],
       "css": [
         "css/popup.css",
@@ -38,16 +43,10 @@
     ]
   },
   "permissions": [
-    "privacy",
-    "storage",
     "tabs",
-    "activeTab",
-    "webNavigation",
-    "webRequest",
-    "<all_urls>",
-    "notifications"
+    "activeTab"
   ],
   "web_accessible_resources": [
-    "/web_accessible_resources/*"
+    "public/*"
   ]
 }
