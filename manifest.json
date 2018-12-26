@@ -1,7 +1,7 @@
 {
   "name": "Warning Goose",
   "description": "Warning Goose - Crowdsourced Privacy Alert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "manifest_version": 2,
   "author": "MaPrivacy.Org",
   "icons": {
