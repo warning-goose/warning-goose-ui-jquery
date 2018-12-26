@@ -5,8 +5,8 @@ dtwg_$(function() {
     /*
      * CONSTANTS & GLOBALS 
      */
-    var SCOPE = '#dtwg ';
-    var DEBUG = true;
+    var SCOPE = '#dtwg '; // do not remove the trailing space in string
+    var DEBUG = false;
     var MODEL; // will contain the data model
     var $BODY = $(SCOPE + 'body');
 
@@ -174,7 +174,8 @@ dtwg_$(function() {
     });
 
     $(SCOPE + '#form').on('submit', function(ev) {
-        let $section = $(this).find('section').last();
+        let $nextSection = $(this).find('section').last();
+        let $curSection = $nextSection.prev();
         ev.preventDefault();
 
         $.ajax({
@@ -190,9 +191,10 @@ dtwg_$(function() {
             $BODY.animate({ opacity: 0 }, 250, function() {
                 $BODY.css('opacity', '0');
                 $BODY.css('display', 'block');
-                $section.css('display', 'block');
-                var top = $section.offset().top;
-                $(SCOPE + 'html,' + SCOPE + ' body').scrollTop(top)  
+                $curSection.css('display', 'none');
+                $nextSection.css('display', 'block');
+                // var top = $section.offset().top;
+                // $(SCOPE + 'html,' + SCOPE + ' body').scrollTop(top)  
                 $BODY.animate({opacity: 1}, 250);
             });
         }).fail(function() {
