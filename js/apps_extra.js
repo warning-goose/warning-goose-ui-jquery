@@ -24,6 +24,6 @@
    }
 
    function liens(){ 
-   var w = window.open("https://datatransition.net/",'_blank');
+   var w = window.open("https://maprivacy.org",'_blank');
    };
    */

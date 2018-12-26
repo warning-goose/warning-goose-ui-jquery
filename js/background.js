@@ -15,7 +15,7 @@ catch (e) {
 /*
 function browserAction(data){
     agent.tabs.update({
-        url:"https://datatransition.net/"})
+        url:"https://maprivacy.org/"})
 
     console.log("browserAction clicked");
 }
