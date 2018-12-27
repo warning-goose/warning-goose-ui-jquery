@@ -78,8 +78,7 @@ test-dev: node_modules css-dev js-dev ## Test dev extension in browser
 test-prod: node_modules css-prod js-prod ## Test prod extension in browser
 	web-ext run
 
-build: node_modules css/style-prod.css ## Build extension for production
-	cp css/style-prod.css css/style.css
+build: node_modules css-prod js-prod ## Build extension for production
 	web-ext build --overwrite-dest
 
 .PHONY: extension build test-dev test-prod watch help clean js-common
