@@ -1,19 +1,27 @@
 dtwg_$(function() {
-    // local jQuery
-    var $ = dtwg_$;
-
     /*
      * CONSTANTS & GLOBALS 
      */
+    var $ = dtwg_$; // local definition of jQuery
+    var ENVIRONMENT = __ENVIRONMENT__;
     var SCOPE = '#dtwg '; // do not remove the trailing space in string
-    var DEBUG = false;
     var MODEL; // will contain the data model
     var $BODY = $(SCOPE + 'body');
 
     // Network settings
-    var API_URL = DEBUG ? 
-        'http://localhost:9200' : 
-        'https://warning-goose.maprivacy.org';
+    var API_URL = (function() {
+        switch (ENVIRONMENT) {
+            case 'development': 
+                return 'http://localhost:9200';
+                break;
+            case 'production': 
+                return 'https://warning-goose.maprivacy.org';
+                break;
+            default: 
+                return 'http://example.com/no/environment/defined';
+                break;
+        }
+    })();
 
     // Internationalization
     var LANG = 'fr';
