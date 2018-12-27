@@ -56,12 +56,10 @@ js-prod: build/js/app-prod.js ## Build JS for production
 
 watch: node_modules ## Watch directory for changes & build CSS for development
 	$$(npm bin)/nodemon -e scss \
-		-x "$(MAKE) css-dev && cp css/style-dev.css css/style.css"
+		-x "$(MAKE) css-dev"
 
 clean: ## Clean temporary files & artifacts
-	rm -f css/style.css
-	rm -f css/style-dev.css
-	rm -f css/style-prod.css
+	rm -f build/*
 	rm -f web-ext-artifacts/*.zip
 
 help: ## Show this help
@@ -84,5 +82,5 @@ build: node_modules css/style-prod.css ## Build extension for production
 	cp css/style-prod.css css/style.css
 	web-ext build --overwrite-dest
 
-.PHONY: extension build-dev build-prod watch
+.PHONY: extension build test-dev test-prod watch help clean js-common
 
