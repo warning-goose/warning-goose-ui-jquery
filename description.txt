@@ -1,9 +1,24 @@
-EN:
+ENGLISH:
+
 Raise an alert on sites that bother you, make you doubt or annoy you about the use of your personal data.
 
-This browser add-on aims to support the organization of collective actions of citizens on GDPR compliance issues.
+This browser add-on aims to support the organization of collective actions of citizens on the General Data Protection Regularion (GDPR) compliance issues.
 
-FR:
-Levez une alerte sur les sites qui vous gênent, vous font douter ou énervent concernant l'usage de vos données personnelles .
+These actions make it possible to file a complaint and claim damages for the damage suffered.
 
-L'extension sert de support à l'organisation d'actions collectives de citoyens sur les questions de conformité GDPR.
+We do not collect any data automatically: we only collect the URL of the site for which you wish to alert us, and your email for the time it takes to confirm your humanity.
+
+If you have any questions: https://maprivacy.org
+
+
+FRANCAIS:
+
+Levez une alerte sur les sites qui vous gênent, vous font douter ou vous énervent concernant l'usage de vos données personnelles .
+
+L'extension sert de support à l'organisation d'actions collectives de citoyens sur les questions de conformité au Règlement Général sur la Protection des Données (RGPD).
+
+Ces actions permettent de porter plainte et demander des dommages et intérêt pour les préjudices subis.
+
+Nous ne collectons aucune donnée de façon automatisée : seule est recueillie l'URL du site pour lequel vous souhaitez nous alerter, et votre email le temps d'une confirmation de votre humanité.
+
+Si vous avez des questions : https://maprivacy.org
