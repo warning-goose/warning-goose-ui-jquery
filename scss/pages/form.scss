@@ -51,11 +51,23 @@ html#dtwg {
         }
 
         .form-group {
+          position: relative;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: row;
           justify-content: stretch;
           align-items: center;
+
+          .button-overlay {
+            display: none;
+            position: absolute;
+            width: 100%;
+            opacity: 0.5;
+            margin-top: 20px;
+            text-align: center;
+
+            @include wg-loader;
+          }
 
           input[type=radio],
           input[type=checkbox] {
@@ -101,11 +113,9 @@ html#dtwg {
               color: $color_lightgrey;
             }
           }
+        } // form-group
+      } // main
+    } // section
+  } // body
+} // html#dtwg
 
-        }
-      }
-    }
-
-  }
-
-}

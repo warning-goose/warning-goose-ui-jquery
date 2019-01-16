@@ -7,6 +7,7 @@ dtwg_$(function() {
     var SCOPE = '#dtwg '; // do not remove the trailing space in string
     var MODEL; // will contain the data model
     var $BODY = $(SCOPE + 'body');
+    var EMAIL_REGEXP = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 
     // Network settings
     var API_URL = (function() {
@@ -88,7 +89,7 @@ dtwg_$(function() {
                 .toLowerCase();
 
             // create setter
-            this['set' +capProp] = function(value) {
+            this['set' + capProp] = function(value) {
                 data[prop] = value;
                 console.log(data);
                 // console.log("trigger wg:" + kebabProp + ' => ' + value);
@@ -104,7 +105,7 @@ dtwg_$(function() {
 
 
     /** 
-     * EVENT MANAGEMENT
+     * EVENT MANAGEMENT : WG MODEL
      **/
 
     $BODY.on('wg:set-target-url', function(ev, url) {
@@ -120,6 +121,7 @@ dtwg_$(function() {
         var text = _("why-" + wassup);
         text = text.replace('%s', "<span class='site-url'>" + MODEL.targetDomain() + "</span>");
         $(SCOPE + '#title-wassup').html(text);
+        enableButton($('#screen-wassup'));
     });
 
     /* Update text zones with url */
@@ -128,7 +130,37 @@ dtwg_$(function() {
         $siteText.text(data);
     });
 
+    $BODY.on('wg:set-topics', function (ev, data) {
+        enableButton($('#screen-topics'));
+    });
+
+    $BODY.on('wg:set-offensive', function (ev, data) {
+        enableButton($('#screen-offensive'));
+    });
+
+    $BODY.on('wg:set-email', function (ev, data) {
+        if (data.match(EMAIL_REGEXP)) {
+            enableButton($('#screen-email'));
+        } else {
+            disableButton($('#screen-email'));
+        }
+    });
+
+    /** 
+     * EVENT MANAGEMENT : HTML ELEMENTS
+     **/
+
     $(SCOPE + 'input[name="your-email"]').on('input', function() {
+        var email = $(this).val();
+        MODEL.setEmail(email);
+    });
+
+    $(SCOPE + 'input[name="your-email"]').on('change', function() {
+        var email = $(this).val();
+        MODEL.setEmail(email);
+    });
+
+    $(SCOPE + 'input[name="your-email"]').on('blur', function() {
         var email = $(this).val();
         MODEL.setEmail(email);
     });
@@ -160,16 +192,28 @@ dtwg_$(function() {
     $(SCOPE + 'section:first').fadeIn();
 
     // enable action button after click
+    /*
     $(SCOPE + 'section .form-group')
     .children('[type=radio], [type=checkbox], [type=text], [type=email]')
     .on('change', function() {
         var $submit = $(this).closest('section').find('[type=submit], [type=button]');
         $submit.removeAttr('disabled');
     });
+    */
+   /*
+    */
 
-    $(SCOPE + 'section .form-group > [type=button]').on('click', function() {
-        var $curSection = $(this).closest('section');
-        var $nextSection = $(this).closest('section').next();
+    function enableButton($curSection) {
+        var $submit = $curSection.find('[type=submit], [type=button]');
+        $submit.removeAttr('disabled');
+    }
+
+    function disableButton($curSection) {
+        var $submit = $curSection.find('[type=submit], [type=button]');
+        $submit.addAttr('disabled');
+    }
+
+    function switchPage($curSection, $nextSection) {
         $BODY.animate({ opacity: 0 }, 250, function() {
             $BODY.css('opacity', '0');
             $BODY.css('display', 'block');
@@ -179,13 +223,24 @@ dtwg_$(function() {
             // $('html, body').scrollTop(top)  
             $BODY.animate({opacity: 1}, 250);
         });
+    }
+
+    $(SCOPE + 'section .form-group > [type=button]').on('click', function() {
+        var $curSection = $(this).closest('section');
+        var $nextSection = $(this).closest('section').next();
+        switchPage($curSection, $nextSection);
     });
 
     $(SCOPE + '#form').on('submit', function(ev) {
         let $nextSection = $(this).find('section').last();
         let $curSection = $nextSection.prev();
         ev.preventDefault();
+        let $submitButton = $curSection.find('input[type=submit]');
+        
+        $submitButton.val('');
+        $submitButton.next().show();
 
+        console.log("sending data to " + API_URL + '/api/v1/statements');
         $.ajax({
 		    type:'POST',
             url: API_URL + '/api/v1/statements',
@@ -196,15 +251,7 @@ dtwg_$(function() {
             contentType: 'application/json; charset=utf-8',
             processData: false,
         }).done(function() {
-            $BODY.animate({ opacity: 0 }, 250, function() {
-                $BODY.css('opacity', '0');
-                $BODY.css('display', 'block');
-                $curSection.css('display', 'none');
-                $nextSection.css('display', 'block');
-                // var top = $section.offset().top;
-                // $(SCOPE + 'html,' + SCOPE + ' body').scrollTop(top)  
-                $BODY.animate({opacity: 1}, 250);
-            });
+            switchPage($curSection, $nextSection);
         }).fail(function() {
             alert(_("error-when-sending-data"));
         });
