@@ -1,5 +1,6 @@
 
 NAME=warning-goose
+CSS_SOURCES=$(wildcard scss/**/*.scss)
 
 help:
 
@@ -8,7 +9,7 @@ all:
 node_modules:
 	npm install
 	
-build/css/style-dev.css: node_modules 
+build/css/style-dev.css: node_modules $(CSS_SOURCES)
 	mkdir -p build/css
 	$$(npm bin)/node-sass \
 		--source-map-embed \
@@ -16,7 +17,7 @@ build/css/style-dev.css: node_modules
 		scss/main.scss \
 		build/css/style-dev.css
 
-build/css/style-prod.css: node_modules
+build/css/style-prod.css: node_modules $(CSS_SOURCES)
 	mkdir -p build/css
 	$$(npm bin)/node-sass \
 		--include-path scss \
