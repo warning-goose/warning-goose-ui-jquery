@@ -13,10 +13,10 @@ dtwg_$(function() {
     var API_URL = (function() {
         switch (ENVIRONMENT) {
             case 'development': 
-                return 'http://localhost:9200';
+                return 'http://localhost';
                 break;
             case 'production': 
-                return 'https://warning-goose.maprivacy.org';
+                return 'https://api.warninggoose.net';
                 break;
             default: 
                 return 'http://example.com/no/environment/defined';
