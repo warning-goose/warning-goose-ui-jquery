@@ -45,7 +45,6 @@ dtwg_$(function() {
 
     try { agent = browser; agentMode = AGENT_MODE_FIREFOX; } catch (e) { }
     try { agent = chrome; agentMode = AGENT_MODE_CHROME; } catch (e) { }
-    
 
     /** 
      * Functions & classes declarations
@@ -59,6 +58,10 @@ dtwg_$(function() {
         return I18N[LANG][str];
     }
 
+    function closePopup() {
+        window.close();
+    }
+
     function getUrlFromTabs(tabs) {
         var url = tabs[0].url;
         MODEL.setTargetUrl(url);
@@ -66,13 +69,48 @@ dtwg_$(function() {
 
     // data model
     function Model() {
-        let data = {
+        let dataDefault = {
             email: '',
             offensive: '',
             targetDomain: '',
             targetUrl: '',
             topics: '',
             wassup: '',
+        }
+        let data = JSON.parse(JSON.stringify(dataDefault));
+
+        this.save = function() {
+            $BODY.trigger('wg:before-save', data);
+            console.log("saving data OK");
+            agent.storage.local.set(data);
+            console.log(data);
+            $BODY.trigger('wg:after-save', data);
+            $BODY.trigger('wg:save', data);
+        }
+
+        this.load = function() {
+            console.log("loading data");
+            $BODY.trigger('wg:before-load', data);
+            let loadDataPromise = agent.storage.local.get();
+            if (loadDataPromise !== undefined) {
+                loadDataPromise.then(
+                    function(loadData) {
+                        console.log("loading data OK");
+                        console.log(loadData);
+                        let loadDataKeys = Object.keys(loadData);
+                        loadDataKeys.forEach(function(k,i) {
+                            data[k] = loadData[k];
+                        });
+                        console.log(data);
+                    }, 
+                    function(err) {
+                        console.error(err);
+                    }
+                );
+            }
+
+            $BODY.trigger('wg:after-load', data);
+            $BODY.trigger('wg:load', data);
         }
 
         this.toJson = function() {
@@ -91,7 +129,7 @@ dtwg_$(function() {
             // create setter
             this['set' + capProp] = function(value) {
                 data[prop] = value;
-                console.log(data);
+                // console.log(data);
                 // console.log("trigger wg:" + kebabProp + ' => ' + value);
                 $BODY.trigger('wg:set-' +kebabProp, value);
             }
@@ -118,13 +156,18 @@ dtwg_$(function() {
     });
 
     $BODY.on('wg:set-wassup', function(ev, wassup) {
-        var text = _("why-" + wassup);
-        text = text.replace('%s', "<span class='site-url'>" + MODEL.targetDomain() + "</span>");
-        $(SCOPE + '#title-wassup').html(text);
+        // var text = _("why-" + wassup);
+        // text = text.replace('%s', "<span class='site-url'>" + MODEL.targetDomain() + "</span>");
+        // $(SCOPE + '#title-wassup').html(text);
         enableButton($('#screen-wassup'));
     });
 
     /* Update text zones with url */
+    $BODY.on('wg:load', function(ev, data) {
+        var $emailInput = $(SCOPE + 'input[name="your-email"]');
+        $emailInput.val(data['email']);
+    });
+
     $BODY.on('wg:set-target-domain', function (ev, data) {
         var $siteText = $(SCOPE + '.site-url');
         $siteText.text(data);
@@ -140,6 +183,7 @@ dtwg_$(function() {
 
     $BODY.on('wg:set-email', function (ev, data) {
         if (data.match(EMAIL_REGEXP)) {
+            MODEL.save();
             enableButton($('#screen-email'));
         } else {
             disableButton($('#screen-email'));
@@ -149,6 +193,11 @@ dtwg_$(function() {
     /** 
      * EVENT MANAGEMENT : HTML ELEMENTS
      **/
+
+    $(SCOPE + '.endgame').on('click', function(ev) {
+        ev.preventDefault();
+        closePopup();
+    });
 
     $(SCOPE + 'input[name="your-email"]').on('input', function() {
         var email = $(this).val();
@@ -185,8 +234,8 @@ dtwg_$(function() {
     /** 
      * MAIN
      */
-
     MODEL = new Model();
+    MODEL.load();
 
     // startup
     $(SCOPE + 'section:first').fadeIn();
@@ -206,11 +255,12 @@ dtwg_$(function() {
     function enableButton($curSection) {
         var $submit = $curSection.find('[type=submit], [type=button]');
         $submit.removeAttr('disabled');
+        $submit.prop('disabled', false);
     }
 
     function disableButton($curSection) {
         var $submit = $curSection.find('[type=submit], [type=button]');
-        $submit.addAttr('disabled');
+        $submit.prop('disabled', true);
     }
 
     function switchPage($curSection, $nextSection) {
@@ -244,7 +294,6 @@ dtwg_$(function() {
         $.ajax({
 		    type:'POST',
             url: API_URL + '/api/v1/statements',
-
             data: MODEL.toJson(),
             dataType: 'json',
             cache: false,
@@ -258,13 +307,15 @@ dtwg_$(function() {
     });
 
     // Within extension only
-    if (agent.runtime !== undefined) {
-        agent.tabs
-        .query({
-            currentWindow: true, 
-            active: true,
-            lastFocusedWindow: true
-        }, getUrlFromTabs);
+    if ((agent.runtime !== undefined) && (agent.tabs !== undefined)) {
+        agent.tabs.query(
+            {
+                currentWindow: true, 
+                active: true,
+                // lastFocusedWindow: true
+            }, 
+            getUrlFromTabs
+        );
     } else {
         var fakeTabs = [{url: 'https://example.com/foo/bar'}];
         getUrlFromTabs(fakeTabs);
