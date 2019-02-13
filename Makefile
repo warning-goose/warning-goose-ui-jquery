@@ -74,10 +74,10 @@ help: ## Show this help
   	  }' $(MAKEFILE_LIST)
 
 test-dev: node_modules css-dev js-dev ## Test dev extension in browser
-	web-ext run
+	web-ext run --verbose
 
 test-prod: node_modules css-prod js-prod ## Test prod extension in browser
-	web-ext run
+	web-ext run --verbose
 
 build: node_modules css-prod js-prod ## Build extension for production
 	web-ext build --overwrite-dest
