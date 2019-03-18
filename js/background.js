@@ -10,7 +10,7 @@ try { agent = chrome; agentMode = AGENT_MODE_CHROME; } catch (e) { }
     /*
        function browserAction(data){
        agent.tabs.update({
-url:"https://maprivacy.org/"})
+url:"https://warninggoose.net/"})
 
 console.log("browserAction clicked");
 }

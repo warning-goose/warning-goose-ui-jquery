@@ -24,6 +24,6 @@
    }
 
    function liens(){ 
-   var w = window.open("https://maprivacy.org",'_blank');
+   var w = window.open("https://warninggoose.net",'_blank');
    };
    */
