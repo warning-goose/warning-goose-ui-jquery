@@ -8,7 +8,7 @@ These actions make it possible to file a complaint and claim damages for the dam
 
 We do not collect any data automatically: we only collect the URL of the site for which you wish to alert us, and your email for the time it takes to confirm your humanity.
 
-If you have any questions: https://maprivacy.org
+If you have any questions: https://warninggoose.net
 
 
 FRANCAIS:
@@ -21,4 +21,4 @@ Ces actions permettent de porter plainte et demander des dommages et intérêt p
 
 Nous ne collectons aucune donnée de façon automatisée : seule est recueillie l'URL du site pour lequel vous souhaitez nous alerter, et votre email le temps d'une confirmation de votre humanité.
 
-Si vous avez des questions : https://maprivacy.org
+Si vous avez des questions : https://warninggoose.net
