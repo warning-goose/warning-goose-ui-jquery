@@ -80,8 +80,11 @@ test-dev: node_modules css-dev js-dev ## Test dev extension in browser
 test-prod: node_modules css-prod js-prod ## Test prod extension in browser
 	$$(npm bin)/web-ext run --verbose --browser-console
 
-build: node_modules css-prod js-prod ## Build extension for production
-	$$(npm bin)/web-ext build --overwrite-dest --ignore-files "*.sh"
+lint:
+	$$(npm bin)/web-ext lint --ignore-files '**/*.sh'
+
+build: lint node_modules css-prod js-prod ## Build extension for production
+	$$(npm bin)/web-ext build --overwrite-dest --ignore-files '**/*.sh'
 
 .PHONY: extension build test-dev test-prod watch help clean js-common
 
