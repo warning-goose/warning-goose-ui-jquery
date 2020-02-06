@@ -5,10 +5,11 @@
   "main": "",
   "scripts": {},
   "author": "Glenn Y. Rolland",
-  "license": "ISC",
+  "license": "LGPL-3",
   "dependencies": {
     "clean-css-cli": "^4.2.1",
-    "node-sass": "^4.9.4",
+    "event-stream": "^4.0.1",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.18.4"
   }
 }
