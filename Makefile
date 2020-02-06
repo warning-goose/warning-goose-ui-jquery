@@ -1,7 +1,7 @@
 
 NAME=warning-goose
 CSS_SOURCES=$(wildcard scss/**/*.scss)
-# JS_SOURCES=$(wildcard js/**/*.js)
+JS_SOURCES=$(wildcard js/**/*.js)
 
 help:
 
@@ -31,7 +31,7 @@ css-dev: build/css/style-dev.css ## Build CSS for development (with source-map)
 css-prod: build/css/style-prod.css ## Build CSS for production
 	cp build/css/style-prod.css build/css/style.css
 
-js-common:
+js-common: $(JS_SOURCES)
 	# prepare dir
 	mkdir -p build/js
 	cp -a js/*.js build/js
@@ -85,7 +85,8 @@ lint:
 		--ignore-files '**/*.sh' \
 		--ignore-files js/*
 
-build: lint node_modules css-prod js-prod ## Build extension for production
+build: node_modules css-prod js-prod ## Build extension for production
+	$(MAKE) lint
 	$$(npm bin)/web-ext build --overwrite-dest \
 		--ignore-files '**/*.sh' \
 		--ignore-files js/*
