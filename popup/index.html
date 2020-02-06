@@ -12,10 +12,98 @@
   <body>
     <form id="form" action="#" method="post">
 
+      <section id="screen-topics">
+        <header>
+          	<h2>Hey, Warning Goose !</h2>
+          	<h3>Qu'est-ce qui t'alerte sur <span class="site-url">SITE</span> concernant l'utilisation de tes informations personnelles&nbsp;?</h3>
+        </header>
+
+        <main>
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_access" value="topic_access" />
+            <label for="topic_access">Qui aura le droit de les voir&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_purpose_usage" value="topic_purpose_usage" />
+            <label for="topic_purpose_usage">À quoi elles vont servir&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_transfer_thirdparty" value="topic_transfer_thirdparty" />
+            <label for="topic_transfer_thirdparty">À qui elles sont transmises&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_transfer_use" value="topic_transfer_use" />
+            <label for="topic_transfer_use">Pour quel usage sont-elles transmises&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_privacy_contact" value="topic_privacy_contact" />
+            <label for="topic_privacy_contact">Qui je peux contacter pour poser mes questions&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_too_many_data" value="topic_too_many_data" />
+            <label for="topic_too_many_data">On m'en demande trop par rapport aux services offerts&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_too_complicated" value="topic_too_complicated" />
+            <label for="topic_too_complicated">Ce que l'on m'explique est trop compliqué&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_protection" value="topic_protection" />
+            <label for="topic_protection">Comment sont-elles protégées&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_tracking_option" value="topic_tracking_option" />
+            <label for="topic_tracking_option">Je ne peux pas gérer les cookies&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_all_or_nothing" value="topic_all_or_nothing" />
+            <label for="topic_all_or_nothing">Si je les donne pas toutes, j'ai le droit à rien&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_retention_time" value="topic_retention_time" />
+            <label for="topic_retention_time">Combien de temps seront-elles gardées&nbsp;?</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_discrimination_fear" value="topic_discrimination_fear" />
+            <label for="topic_discrimination_fear">J'ai peur qu'elles me pénalisent&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_discrimination_information" value="topic_discrimination_information" />
+            <label for="topic_discrimination_information">Comment elles sont utilisés pour prendre des décisions à mon sujet</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_consent_purpose" value="topic_consent_purpose" />
+            <label for="topic_consent_purpose">J'ai dit oui mais c'est pas clair&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="topics[]" id="topic_consent_by_force" value="topic_consent_by_force" />
+            <label for="topic_consent_by_force">On me force à accepter des choses que je ne veux pas&nbsp;!</label>
+          </div>
+
+          <div class="form-group">
+            <input type="button" value="Continuer" disabled />
+          </div>
+        </main>
+      </section>
+
       <section id="screen-wassup">
         <header>
-          <h2>Hey, Warning Goose !</h2>
-          <h3>Qu'est-ce qui te gêne avec <span class="site-url">SITE</span> à propos de l'utilisation de tes données ?</h3>
+          <h2>Ah oui, quand même !</h2>
+          <h3>Dans quel état cela te met&nbsp;?</h3>
         </header>
 
         <main>
@@ -35,89 +123,36 @@
           </div>
 
           <div class="form-group">
-            <input type="button" value="Continuer" disabled />
-          </div>
-        </main>
-      </section>
-
-      <section id="screen-topics">
-        <header>
-          	<h2 id="title-wassup">Pourquoi SITE te GENE ?</h2>
-          <h3>Sélectionne les sujets qui t'alertent sur ce site</h3>
-        </header>
-
-        <main>
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic1" value="topic1" />
-            <label for="topic1">Mes données, qui va les voir&nbsp;?</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic2" value="topic2" />
-            <label for="topic2">Mes données, elles servent à quoi&nbsp;?</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic3" value="topic3" />
-            <label for="topic3">Mes données, elles circulent où&nbsp;?</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic4" value="topic4" />
-            <label for="topic4">Qui est responsable de mes données&nbsp;?</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic5" value="topic5" />
-            <label for="topic5"> Je ne peux pas exercer mes droits facilement&nbsp;!</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic6" value="topic6" />
-            <label for="topic6">On me demande trop de données&nbsp;!</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic7" value="topic7" />
-            <label for="topic7">Comment sont protégées mes données&nbsp;?</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic8" value="topic8" />
-            <label for="topic8"> Je ne peux pas accéder aux informations avant de valider&nbsp;!</label>
-          </div>
-
-          <div class="form-group">
-            <input type="checkbox" name="topics[]" id="topic9" value="topic9" />
-            <label for="topic9">Je ne veux pas que ces informations deviennent publiques&nbsp;!</label>
+            <input type="radio" name="wassup" id="i_am_worried_about" value="i_am_worried_about" />
+            <label for="i_am_worried_about">J'ai peur</label>
           </div>
 
           <div class="form-group">
             <input type="button" value="Continuer" disabled />
           </div>
         </main>
-
       </section>
 
       <section id="screen-offensive">
         <header>
-          <h2>Des lois nous protègent</h2>
-          <h3>Veux-tu participer à la défense de tes droits ?</h3>
+          <h2>Hey, des lois te protègent&nbsp;!</h2>
+          <h3>Veux-tu défendre tes droits ?</h3>
         </header>
 
         <main>
           <div class="form-group">
-            <input type="radio" name="offensive" id="offensive-no" value="no" />
-            <label for="offensive-no">Non</label>
-          </div>
-          <div class="form-group">
             <input type="radio" name="offensive" id="offensive-yes" value="yes" />
             <label for="offensive-yes">Oui</label>
           </div>
+          <div class="form-group">
+            <input type="radio" name="offensive" id="offensive-no" value="no" />
+            <label for="offensive-no">Non</label>
+          </div>
+
           <p class="explanation">
-          Il existe des associations qui défendent nos droits, collectivement,
-          au travers d'actions juridiques et qui demanderont dommages et
-          intérêts pour les préjudices subis.  
+          Warning Goose s'associe avec des associations qui portent des
+          plaintes collectives auprès des tribunaux et demandent des dommages
+          et intérêts pour pour les préjudices subis.
           </p>
 
           <p class="explanation">
@@ -134,7 +169,7 @@
 
       <section id="screen-email">
         <header>
-          <h2>C'est bien noté !</h2>
+          <h2>Prouve-nous que tu es humain&nbsp;!</h2>
           <h3>
             Quel est ton email ?
           </h3>
@@ -150,19 +185,23 @@
              />
           </div>
 
-          <div class="explanation">
-            <b>Nous allons t'envoyer un email. 
-            Tu devras cliquer sur le lien qu'il contient pour valider 
-              tout ce que tu viens de nous dire.</b>
-          </div>
+          <p class="explanation">
+            <b>Nous allons t'envoyer un message. 
+            Tu devras cliquer sur le lien qu'il contient pour valider tout ce
+            que tu viens de nous dire.</b>
+          </p>
 
           <p class="explanation">
-          	  Sache que nous ne conserverons pas ton email&nbsp; si tu ne 
-          	  souhaites pas participer à une action collective ! Si tu as des
-          	  questions, pose-les à <a href="mailto:warning-goose@maprivacy.org"
-          	  >warning-goose@maprivacy.org</a><br/>
+          	  Sache que nous ne conserverons pas ton email&nbsp; à moins
+          	  que tu souhaites participer à une action collective&nbsp;!
+          </p>
+
+          <p class="explanation">
+          	  Si tu as des questions, pose-les à
+          	  <em>contact@warninggoose.net</em><br/>
           	  <!-- Politique de confidentialité  LIENS -->
           </p>
+
           <div class="form-group">
             <input type="submit" value="Envoyer" disabled />
             <div class="button-overlay">
@@ -184,7 +223,7 @@
         	reprendre une activité normale.
         	</p>
         	<div class="form-group">
-        		<input type="button" value="Terminer" />
+        		<input class="endgame" type="button" value="Terminer" />
         	</div>
         </main>
       </section>

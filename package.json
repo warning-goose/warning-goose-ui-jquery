@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Glenn Y. Rolland",
-  "license": "ISC",
+  "license": "LGPL-3",
   "dependencies": {
     "clean-css-cli": "^4.2.1",
-    "node-sass": "^4.9.4",
-    "nodemon": "^1.18.4"
+    "event-stream": "^4.0.1",
+    "node-sass": "^4.13.1",
+    "nodemon": "^1.18.4",
+    "web-ext": "^4.0.0"
   }
 }

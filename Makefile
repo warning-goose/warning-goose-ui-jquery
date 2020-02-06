@@ -1,6 +1,7 @@
 
 NAME=warning-goose
 CSS_SOURCES=$(wildcard scss/**/*.scss)
+# JS_SOURCES=$(wildcard js/**/*.js)
 
 help:
 
@@ -49,10 +50,10 @@ build/js/app-prod.js: js/_app.js
 		js/_app.js \
 		> build/js/app-prod.js
 
-js-dev: build/js/app-dev.js ## Build JS for development
+js-dev: build/js/app-dev.js js-common ## Build JS for development
 	cp build/js/app-dev.js build/js/app.js
 
-js-prod: build/js/app-prod.js ## Build JS for production
+js-prod: build/js/app-prod.js js-common ## Build JS for production
 	cp build/js/app-prod.js build/js/app.js
 
 watch: node_modules ## Watch directory for changes & build CSS for development
@@ -74,13 +75,13 @@ help: ## Show this help
   	  }' $(MAKEFILE_LIST)
 
 test-dev: node_modules css-dev js-dev ## Test dev extension in browser
-	web-ext run
+	$$(npm bin)/web-ext run --verbose --browser-console
 
 test-prod: node_modules css-prod js-prod ## Test prod extension in browser
-	web-ext run
+	$$(npm bin)/web-ext run --verbose --browser-console
 
 build: node_modules css-prod js-prod ## Build extension for production
-	web-ext build --overwrite-dest
+	$$(npm bin)/web-ext build --overwrite-dest --ignore-files "*.sh"
 
 .PHONY: extension build test-dev test-prod watch help clean js-common
 
