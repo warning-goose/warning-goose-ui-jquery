@@ -31,7 +31,7 @@
         "<all_urls>"
       ],
       "js": [
-        "build/js/jquery-3.3.1.min.js",
+        "build/js/jquery-3.4.1.min.js",
         "build/js/app.js"
       ],
       "css": [
@@ -41,7 +41,7 @@
   ],
   "background": {
     "scripts": [
-      "js/background.js"
+      "build/js/background.js"
     ]
   },
   "permissions": [

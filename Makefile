@@ -1,7 +1,7 @@
 
 NAME=warning-goose
 CSS_SOURCES=$(wildcard scss/**/*.scss)
-# JS_SOURCES=$(wildcard js/**/*.js)
+JS_SOURCES=$(wildcard js/**/*.js)
 
 help:
 
@@ -31,7 +31,7 @@ css-dev: build/css/style-dev.css ## Build CSS for development (with source-map)
 css-prod: build/css/style-prod.css ## Build CSS for production
 	cp build/css/style-prod.css build/css/style.css
 
-js-common:
+js-common: $(JS_SOURCES)
 	# prepare dir
 	mkdir -p build/js
 	cp -a js/*.js build/js
@@ -61,8 +61,8 @@ watch: node_modules ## Watch directory for changes & build CSS for development
 		-x "$(MAKE) css-dev"
 
 clean: ## Clean temporary files & artifacts
-	rm -f build/*
-	rm -f web-ext-artifacts/*.zip
+	rm -fr build/*
+	rm -fr web-ext-artifacts/*.zip
 
 help: ## Show this help
 	@echo "Usage: make <target>"
@@ -80,8 +80,16 @@ test-dev: node_modules css-dev js-dev ## Test dev extension in browser
 test-prod: node_modules css-prod js-prod ## Test prod extension in browser
 	$$(npm bin)/web-ext run --verbose --browser-console
 
+lint:
+	$$(npm bin)/web-ext lint \
+		--ignore-files '**/*.sh' \
+		--ignore-files js/*
+
 build: node_modules css-prod js-prod ## Build extension for production
-	$$(npm bin)/web-ext build --overwrite-dest --ignore-files "*.sh"
+	$(MAKE) lint
+	$$(npm bin)/web-ext build --overwrite-dest \
+		--ignore-files '**/*.sh' \
+		--ignore-files js/*
 
 .PHONY: extension build test-dev test-prod watch help clean js-common
 
