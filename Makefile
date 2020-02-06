@@ -61,8 +61,8 @@ watch: node_modules ## Watch directory for changes & build CSS for development
 		-x "$(MAKE) css-dev"
 
 clean: ## Clean temporary files & artifacts
-	rm -f build/*
-	rm -f web-ext-artifacts/*.zip
+	rm -fr build/*
+	rm -fr web-ext-artifacts/*.zip
 
 help: ## Show this help
 	@echo "Usage: make <target>"
@@ -81,10 +81,14 @@ test-prod: node_modules css-prod js-prod ## Test prod extension in browser
 	$$(npm bin)/web-ext run --verbose --browser-console
 
 lint:
-	$$(npm bin)/web-ext lint --ignore-files '**/*.sh'
+	$$(npm bin)/web-ext lint \
+		--ignore-files '**/*.sh' \
+		--ignore-files js/*
 
 build: lint node_modules css-prod js-prod ## Build extension for production
-	$$(npm bin)/web-ext build --overwrite-dest --ignore-files '**/*.sh'
+	$$(npm bin)/web-ext build --overwrite-dest \
+		--ignore-files '**/*.sh' \
+		--ignore-files js/*
 
 .PHONY: extension build test-dev test-prod watch help clean js-common
 
