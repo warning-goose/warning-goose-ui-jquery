@@ -75,13 +75,13 @@ help: ## Show this help
   	  }' $(MAKEFILE_LIST)
 
 test-dev: node_modules css-dev js-dev ## Test dev extension in browser
-	web-ext run --verbose --browser-console
+	$$(npm bin)/web-ext run --verbose --browser-console
 
 test-prod: node_modules css-prod js-prod ## Test prod extension in browser
-	web-ext run --verbose --browser-console
+	$$(npm bin)/web-ext run --verbose --browser-console
 
 build: node_modules css-prod js-prod ## Build extension for production
-	web-ext build --overwrite-dest
+	$$(npm bin)/web-ext build --overwrite-dest
 
 .PHONY: extension build test-dev test-prod watch help clean js-common
 

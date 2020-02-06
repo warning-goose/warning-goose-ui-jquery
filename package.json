@@ -10,6 +10,7 @@
     "clean-css-cli": "^4.2.1",
     "event-stream": "^4.0.1",
     "node-sass": "^4.13.1",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "web-ext": "^4.0.0"
   }
 }
