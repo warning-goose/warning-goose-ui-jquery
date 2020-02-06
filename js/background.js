@@ -21,10 +21,10 @@ agent.runtime.onMessage.addListener(browserAction);
 /*
  * On click, fetch stored settings and forget browsing data.
  */
-console.log("malibu loaded");
+console.log("DT-WG loaded");
 agent.browserAction.onClicked.addListener(() => {
-    const gettingStoredSettings = agent.storage.local.get();
-    console.log("a malibu");
+    console.log("DT-WG clicked");
+    // const gettingStoredSettings = agent.storage.local.get();
     // do something with data
     // gettingStoredSettings.then(forget, onError);
 });
