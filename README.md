@@ -1,14 +1,14 @@
 # Warning Goose
 
-Front-end for Warning Goose 2.x.x - the crowdsourced privacy alert
+Front-end for Warning Goose 1.x.x - the crowdsourced privacy alert.
 
 ## Installation
 
 Please make sure you have node, make, gcc, and build-essentials installed on
 your system.
 
-
     npm install
+
 
 ## Build
 
