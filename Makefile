@@ -1,7 +1,10 @@
 
-NAME=warning-goose
+NAME=warning-goose-ui-jquery
 CSS_SOURCES=$(wildcard scss/**/*.scss)
 JS_SOURCES=$(wildcard js/**/*.js)
+GIT_VERSION=$(shell git describe --tag)
+GIT_BRANCH=$(shell git symbolic-ref --short -q HEAD)
+
 
 help:
 
@@ -91,5 +94,8 @@ build: node_modules css-prod js-prod ## Build extension for production
 		--ignore-files '**/*.sh' \
 		--ignore-files js/*
 
-.PHONY: extension build test-dev test-prod watch help clean js-common
+zip:
+	git archive --format zip --output "../$(NAME)-$(GIT_VERSION)-$(GIT_BRANCH).zip" HEAD
+
+.PHONY: extension build test-dev test-prod watch help clean js-common zip
 
