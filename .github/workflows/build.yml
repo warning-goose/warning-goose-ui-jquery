@@ -23,8 +23,9 @@ jobs:
         path: web-ext-artifacts
     - name: Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
+      # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: "web-ext-artifacts/**"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# 
