@@ -35,6 +35,6 @@ Got questions? Need help? Tweet at [@glenux](https://twitter.com/glenux)
 
 ## License
 
-Musala Push is Copyright © 2018-2019 Glenn ROLLAND. It is free software, and may be redistributed under the terms specified in the LICENSE.txt file.
+Warning Goose is Copyright © 2019-2020 Glenn ROLLAND. It is free software, and may be redistributed under the terms specified in the LICENSE.txt file.
 
 
