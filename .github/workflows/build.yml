@@ -19,6 +19,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
+        name: Warning Goose for Firefox
         path: dist
     - name: Release
       uses: softprops/action-gh-release@v1
