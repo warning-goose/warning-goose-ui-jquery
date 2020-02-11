@@ -1,31 +1,31 @@
+---
 name: Build
 
-on: [push]
+on: ['push']
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v2
-      name: Checkout
-      with:
-        fetch-depth: 1
-    - name: Install NPM dependencies
-      run: npm install
-    - name: Build web extension
-      run: make build
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: Warning Goose for Firefox
-        path: web-ext-artifacts
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      # if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: "web-ext-artifacts/**"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-# 
+      - uses: actions/checkout@v2
+        name: Checkout
+        with:
+          fetch-depth: 1
+      - name: Install NPM dependencies
+        run: npm install
+      - name: Build web extension
+        run: make build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: Warning Goose for Firefox
+          path: web-ext-artifacts
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: "web-ext-artifacts/**"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#
