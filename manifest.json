@@ -34,6 +34,7 @@
         "build/js/jquery-3.4.1.min.js",
         "build/js/app.js"
       ],
+      "run_at": "document_start",
       "css": [
         "build/css/style.css"
       ]
