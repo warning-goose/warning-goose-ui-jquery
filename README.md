@@ -1,6 +1,18 @@
-# Warning Goose
+![Warning Goose Icon](https://raw.githubusercontent.com/warning-goose/warning-goose-ui-jquery/develop/img/icon-with-text-512.png)
 
-Front-end for Warning Goose 1.x.x - the crowdsourced privacy alert.
+Warning Goose is a citizen alert application that aims to help Internet users make their right to data protection and privacy heard.
+
+Through an extension on your web browser, you can express your dissatisfaction with a company or organization in a few seconds.
+
+![build status](https://github.com/warning-goose/warning-goose-ui-jquery/workflows/Build/badge.svg)
+
+[Download for Firefox](https://addons.mozilla.org/fr/firefox/addon/warning-goose/) &mdash; 
+[Download for Chrome](https://chrome.google.com/webstore/detail/warning-goose/pmedhcfnjiajfbanjbingfiffaihnphf?hl=en) &mdash; 
+[Download source code](https://github.com/warning-goose/warning-goose-ui-jquery/releases)
+
+---
+
+This repository contains the web extensions (front-end par) of Warning Goose 1.x.x - the crowdsourced privacy alert.
 
 ## Installation
 
@@ -35,6 +47,6 @@ Got questions? Need help? Tweet at [@glenux](https://twitter.com/glenux)
 
 ## License
 
-Musala Push is Copyright © 2018-2019 Glenn ROLLAND. It is free software, and may be redistributed under the terms specified in the LICENSE.txt file.
+Warning Goose is Copyright © 2019-2020 Glenn ROLLAND. It is free software, and may be redistributed under the terms specified in the LICENSE.txt file.
 
 

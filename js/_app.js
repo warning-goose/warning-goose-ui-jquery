@@ -1,8 +1,8 @@
-dtwg_$(function() {
+jQuery(function() {
     /*
      * CONSTANTS & GLOBALS 
      */
-    var $ = dtwg_$; // local definition of jQuery
+    var $ = jQuery; // local definition of jQuery
     var ENVIRONMENT = __ENVIRONMENT__;
     var SCOPE = '#dtwg '; // do not remove the trailing space in string
     var MODEL; // will contain the data model
@@ -82,7 +82,9 @@ dtwg_$(function() {
         this.save = function() {
             $BODY.trigger('wg:before-save', data);
             console.log("saving data OK");
-            agent.storage.local.set(data);
+          /*
+             agent.storage.local.set(data);
+             */
             console.log(data);
             $BODY.trigger('wg:after-save', data);
             $BODY.trigger('wg:save', data);
@@ -91,6 +93,7 @@ dtwg_$(function() {
         this.load = function() {
             console.log("loading data");
             $BODY.trigger('wg:before-load', data);
+          /*
             let loadDataPromise = agent.storage.local.get();
             if (loadDataPromise !== undefined) {
                 loadDataPromise.then(
@@ -108,7 +111,7 @@ dtwg_$(function() {
                     }
                 );
             }
-
+*/
             $BODY.trigger('wg:after-load', data);
             $BODY.trigger('wg:load', data);
         }
