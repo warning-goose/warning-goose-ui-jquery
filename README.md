@@ -1,3 +1,7 @@
+
+
+![Warning Goose Icon](https://github.com/warning-goose/warning-goose-ui-jquery/raw/develop/img/icon-256.png)
+
 # Warning Goose
 
 ![Build](https://github.com/warning-goose/warning-goose-ui-jquery/workflows/Build/badge.svg)
