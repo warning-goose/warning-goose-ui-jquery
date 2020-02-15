@@ -1,3 +1,4 @@
+var dtwg_$ = $.noConflict(true);
 dtwg_$(function() {
     /*
      * CONSTANTS & GLOBALS 
