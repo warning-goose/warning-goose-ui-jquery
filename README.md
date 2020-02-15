@@ -1,5 +1,7 @@
 # Warning Goose
 
+![Build](https://github.com/warning-goose/warning-goose-ui-jquery/workflows/Build/badge.svg)
+
 Front-end for Warning Goose 1.x.x - the crowdsourced privacy alert.
 
 ## Installation
