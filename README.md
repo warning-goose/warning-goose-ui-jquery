@@ -1,12 +1,21 @@
 
+<div style="text-align:center">
+<img alt"Warning Goose Icon" src="https://github.com/warning-goose/warning-goose-ui-jquery/raw/develop/img/icon-256.png" />
 
-![Warning Goose Icon](https://github.com/warning-goose/warning-goose-ui-jquery/raw/develop/img/icon-256.png)
+### Shout for your rights
+</div>
 
-# Warning Goose
+Warning Goose is a citizen alert application that aims to help Internet users make their right to data protection and privacy heard.
+
+Through an extension on your web browser, you can express your dissatisfaction with a company or organization in a few seconds.
 
 ![Build](https://github.com/warning-goose/warning-goose-ui-jquery/workflows/Build/badge.svg)
 
-Front-end for Warning Goose 1.x.x - the crowdsourced privacy alert.
+[Download for Firefox](https://addons.mozilla.org/fr/firefox/addon/warning-goose/) &mdash; [Download for Chrome](https://chrome.google.com/webstore/detail/warning-goose/pmedhcfnjiajfbanjbingfiffaihnphf?hl=en) &mdash; [Download source code](https://github.com/warning-goose/warning-goose-ui-jquery/releases)
+
+---
+
+This repository contains the web extensions (front-end par) of Warning Goose 1.x.x - the crowdsourced privacy alert.
 
 ## Installation
 
