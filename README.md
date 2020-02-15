@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div style="text-align: center; width: 75%;">
 
 ![Warning Goose Icon](https://raw.githubusercontent.com/warning-goose/warning-goose-ui-jquery/develop/img/icon-with-text-512.png)
 
