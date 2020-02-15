@@ -1,7 +1,6 @@
+<div style="text-align: center;">
 
 ![Warning Goose Icon](https://raw.githubusercontent.com/warning-goose/warning-goose-ui-jquery/develop/img/icon-with-text-512.png)
-
-### Shout for your rights !
 
 Warning Goose is a citizen alert application that aims to help Internet users make their right to data protection and privacy heard.
 
@@ -10,6 +9,8 @@ Through an extension on your web browser, you can express your dissatisfaction w
 ![Build](https://github.com/warning-goose/warning-goose-ui-jquery/workflows/Build/badge.svg)
 
 [Download for Firefox](https://addons.mozilla.org/fr/firefox/addon/warning-goose/) &mdash; [Download for Chrome](https://chrome.google.com/webstore/detail/warning-goose/pmedhcfnjiajfbanjbingfiffaihnphf?hl=en) &mdash; [Download source code](https://github.com/warning-goose/warning-goose-ui-jquery/releases)
+
+</div>
 
 ---
 
