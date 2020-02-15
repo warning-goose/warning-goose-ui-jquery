@@ -1,5 +1,5 @@
 
-[Warning Goose Icon](https://raw.githubusercontent.com/warning-goose/warning-goose-ui-jquery/develop/img/icon-with-text-512.png)
+![Warning Goose Icon](https://raw.githubusercontent.com/warning-goose/warning-goose-ui-jquery/develop/img/icon-with-text-512.png)
 
 ### Shout for your rights !
 
