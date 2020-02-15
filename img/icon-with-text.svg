@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="648.59058"
-   height="191.59055"
-   viewBox="0 0 171.60626 50.691666"
+   width="573"
+   height="120.43209"
+   viewBox="0 0 151.60625 31.864325"
    version="1.1"
    id="svg1141"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="372.40232"
-     inkscape:cy="15.558081"
+     inkscape:cx="15.701879"
+     inkscape:cy="-18.219267"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -49,27 +49,27 @@
      inkscape:bbox-nodes="true"
      showborder="false">
     <sodipodi:guide
-       position="32.216782,40.427078"
+       position="22.21678,31.490155"
        orientation="0,1"
        id="guide35"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="97.737782,9.2015077"
+       position="87.73778,0.26458431"
        orientation="0,1"
        id="guide37"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="47.662505,25.61041"
+       position="37.662503,16.673487"
        orientation="1,0"
        id="guide33"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="161.34168,80.235742"
+       position="151.34168,71.298818"
        orientation="1,0"
        id="guide50"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="10.264585,77.997913"
+       position="0.26458305,69.060989"
        orientation="1,0"
        id="guide73"
        inkscape:locked="false"
@@ -92,7 +92,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-20.49679,-198.08699)">
+     transform="translate(-30.496792,-207.97741)">
     <rect
        style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
        id="rect81"
